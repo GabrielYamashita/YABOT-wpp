@@ -22,14 +22,16 @@ def sms_reply():
     if msg.lower() in ["oie","oi", "ola", "alo", "alou", "eae", "salve"]:
         resp.message(random.choice([f"Oi {user}!", "Oiee", f"Salve {user}!", f"Eae {user}, tudo bem?"]))
 
+    horario = 0
     addFlag = False
     if msg.lower() in ["add", "adiciona"]:
         addFlag = True
         resp.message("Qual o Horário que vc gostaria de marcar?")
         horario = msg
 
-    if msg.lower() in ["horario", "horário"]:
+    if msg.lower() in ["horario", "horário"] and addFlag == True:
         resp.message(f"{horario}")
+        addFlag = False
 
     return str(resp)
 
