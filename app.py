@@ -2,6 +2,7 @@ import random
 from datetime import datetime
 from flask import Flask, request, redirect, url_for
 from twilio.twiml.messaging_response import MessagingResponse
+from msgAnswer import *
 
 app = Flask(__name__)
 
@@ -21,13 +22,17 @@ def sms_reply():
     if msg.lower() in ["oie","oi", "ola", "alo", "alou", "eae", "salve"]:
         resp.message(random.choice([f"Oi {user}!", "Oiee", f"Salve {user}!", f"Eae {user}, tudo bem?"]))
 
+    addFlag = False
     if msg.lower() in ["add", "adiciona"]:
-        resp.message("ADD")
+        addFlag = True
+        resp.message("Qual o Horário que vc gostaria de marcar?")
+        horario = msg
 
-    
+    if msg.lower() in ["horario", "horário"]:
+        resp.message(f"{horario}")
+
     return str(resp)
-        
-         
+
 
 
 GOOD_BOY_URL = (
