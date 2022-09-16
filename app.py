@@ -12,6 +12,8 @@ def hello():
     return "Hello, World!"
 
 
+horario = 0
+addFlag = False
 @app.route("/yabot", methods=['POST'])
 def sms_reply():
     msg = request.form.get('Body')
@@ -22,8 +24,6 @@ def sms_reply():
     if msg.lower() in ["oie","oi", "ola", "alo", "alou", "eae", "salve"]:
         resp.message(random.choice([f"Oi {user}!", "Oiee", f"Salve {user}!", f"Eae {user}, tudo bem?"]))
 
-    horario = 0
-    addFlag = False
     if msg.lower() in ["add", "adiciona"]:
         addFlag = True
         resp.message("Qual o Horário que vc gostaria de marcar?")
