@@ -12,16 +12,17 @@ def hello():
     return "Hello, World!"
 
 
-user="Yama"
 @app.route("/yabot", methods=['POST'])
 def sms_reply():
     msg = request.form.get('Body')
     resp = MessagingResponse()
+    user="Yama"
 
     horario = 0
     addFlag = False
 
     if msg.lower() in ["oie","oi", "ola", "alo", "alou", "eae", "salve"]:
+        resp.message(f"Oi, {user}")
         resp.message(random.choice([f"Oi {user}!", "Oiee", f"Salve {user}!", f"Eae {user}, tudo bem?"]))
 
     if msg.lower():
