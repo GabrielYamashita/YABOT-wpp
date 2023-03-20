@@ -1,5 +1,6 @@
 
 from datetime import datetime
+from urllib import response
 from flask import Flask, request
 from twilio.twiml.messaging_response import MessagingResponse
 from msgAnswer import *
@@ -30,6 +31,8 @@ def sms_reply():
 
     # Processamento de Envio de Mensagem
     resp = MessagingResponse()
+    msg = resp.message(response)
+
 
     return str(resp)
 
