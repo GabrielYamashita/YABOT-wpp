@@ -25,12 +25,11 @@ def sms_reply():
     incomingMessage = request.form.get('Body').lower()
 
     # Saída
-    response = flow.processInput(incomingMessage)
+    # response = flow.processInput(incomingMessage)
+    response = 'oi'
 
     # Processamento de Envio de Mensagem
     resp = MessagingResponse()
-    msg = resp.message()
-    msg.body(response)
 
     return str(resp)
 
