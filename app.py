@@ -1,13 +1,15 @@
 
 from flask import Flask, request
+from flask_ngrok2 import run_with_ngrok
 from twilio.twiml.messaging_response import MessagingResponse
-from msgAnswer import *
 
 # Fluxo de Conversa
-from ConversationYabot import ConversationFlow
+# from ConversationYabot import ConversationFlow
+# from msgAnswer import *
 
 
 app = Flask(__name__)
+# run_with_ngrok(app=app, auth_token='27sah00EdAmv9RxS5teUE849TnL_6TnpnpdEeozsPMpugjVvu')
 
 # Home Page
 @app.route("/")
@@ -16,8 +18,7 @@ def hello():
 
 
 # Yabot Wpp
-user="Yama"
-flow = ConversationFlow()
+# flow = ConversationFlow()
 @app.route("/yabot", methods=['POST'])
 def sms_reply():
     # Entrada

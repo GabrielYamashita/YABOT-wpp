@@ -63,10 +63,10 @@ class ConversationFlow():
 
 
 
-flow = ConversationFlow()
+# flow = ConversationFlow()
 
-while True:
-   incomingMessage = input("> ")
-   response = flow.processInput(incomingMessage)
+# while True:
+#    incomingMessage = input("> ")
+#    response = flow.processInput(incomingMessage)
 
-   print(response)
+#    print(response)
