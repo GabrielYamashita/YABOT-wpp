@@ -1,5 +1,4 @@
 
-from datetime import datetime
 from flask import Flask, request
 from twilio.twiml.messaging_response import MessagingResponse
 from msgAnswer import *
@@ -26,12 +25,12 @@ def sms_reply():
 
     # Saída
     # response = flow.processInput(incomingMessage)
-    response = 'oi'
+    response = 'Oi'
 
     # Processamento de Envio de Mensagem
     resp = MessagingResponse()
-    msg = resp.message()
-    msg.body(response)
+    resp.message(f"{response}, Yama!")
+    # msg.body(response)
 
     return str(resp)
 
