@@ -29,7 +29,9 @@ def sms_reply():
 
     # Processamento de Envio de Mensagem
     resp = MessagingResponse()
-    resp.message(f"{response}, Yama!")
+
+    if incomingMessage in ['oi']:
+        resp.message(f"{response}, Yama!")
     # msg.body(response)
 
     return str(resp)
