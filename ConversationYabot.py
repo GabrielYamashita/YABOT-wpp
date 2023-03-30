@@ -35,7 +35,6 @@ class ConversationFlow():
 
          escolhas = f'PC: {self.data["pc"]}\nVocê: {self.data["me"]}'
          if self.data['pc'] == self.data['me']:
-            self.state = 'start'
             return f'{escolhas}\nEmpatou'
          
          elif self.data['pc'] == 'pedra':
@@ -59,6 +58,7 @@ class ConversationFlow():
             elif self.data['me'] == 'pedra':
                return f'{escolhas}\nVocê Perdeu!'
          
+         self.state = 'start'
          
 
 
