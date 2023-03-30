@@ -31,7 +31,7 @@ def sms_reply():
     msg = resp.message()
     msg.body(response)
 
-    return f'<h1>Resposta Enviada: </h1><p>{str(resp)}</p>'
+    return str(resp)
 
 
 # Good Boy
