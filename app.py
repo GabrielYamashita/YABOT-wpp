@@ -13,8 +13,8 @@ app = Flask(__name__)
 
 # Home Page
 @app.route("/")
-def hello():
-    return "Hello World!"
+def home():
+    return "<h1>Hello World!</h1> Welcome to YABOT!"
 
 
 # Yabot Wpp
