@@ -32,7 +32,7 @@ def sms_reply():
     resp = MessagingResponse()
 
     if incomingMessage in ['oi']:
-        resp.message(f"{response}, Yama!")
+        resp.message(f"{response}, Yama! Com 2 arquivos python")
     # msg.body(response)
 
     return str(resp)
