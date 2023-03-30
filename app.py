@@ -1,6 +1,6 @@
 
 from flask import Flask, request
-from flask_ngrok2 import run_with_ngrok
+# from flask_ngrok2 import run_with_ngrok
 from twilio.twiml.messaging_response import MessagingResponse
 
 # Fluxo de Conversa
