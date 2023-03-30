@@ -5,8 +5,7 @@ from flask import Flask, request
 from twilio.twiml.messaging_response import MessagingResponse
 
 # Fluxo de Conversa
-# from ConversationYabot import ConversationFlow
-# from msgAnswer import *
+from ConversationYabot import ConversationFlow
 
 
 app = Flask(__name__)
@@ -19,7 +18,7 @@ def hello():
 
 
 # Yabot Wpp
-# flow = ConversationFlow()
+flow = ConversationFlow()
 @app.route("/yabot", methods=['POST'])
 def sms_reply():
     # Entrada
