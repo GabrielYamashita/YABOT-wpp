@@ -1,5 +1,4 @@
 
-import random
 from flask import Flask, request
 # from flask_ngrok2 import run_with_ngrok
 from twilio.twiml.messaging_response import MessagingResponse
@@ -19,22 +18,20 @@ def home():
 
 # Yabot Wpp
 flow = ConversationFlow()
-@app.route("/yabot", methods=['POST'])
+@app.route("/yabot", methods=['GET', 'POST'])
 def sms_reply():
     # Entrada
     incomingMessage = request.form.get('Body').lower()
 
     # Saída
     response = flow.processInput(incomingMessage)
-    # response = 'Oi'
 
     # Processamento de Envio de Mensagem
     resp = MessagingResponse()
-
     msg = resp.message()
     msg.body(response)
 
-    return str(resp)
+    return f'<h1>Resposta Enviada: </h1><p>{str(resp)}</p>'
 
 
 # Good Boy
