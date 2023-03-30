@@ -25,15 +25,14 @@ def sms_reply():
     incomingMessage = request.form.get('Body').lower()
 
     # Saída
-    # response = flow.processInput(incomingMessage)
-    response = 'Oi'
+    response = flow.processInput(incomingMessage)
+    # response = 'Oi'
 
     # Processamento de Envio de Mensagem
     resp = MessagingResponse()
 
-    if incomingMessage in ['oi']:
-        resp.message(f"{response}, Yama! Com 2 arquivos python")
-    # msg.body(response)
+    msg = resp.message()
+    msg.body(response)
 
     return str(resp)
 
