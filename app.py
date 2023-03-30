@@ -1,4 +1,5 @@
 
+import random
 from flask import Flask, request
 # from flask_ngrok2 import run_with_ngrok
 from twilio.twiml.messaging_response import MessagingResponse
@@ -21,21 +22,35 @@ def hello():
 # flow = ConversationFlow()
 @app.route("/yabot", methods=['POST'])
 def sms_reply():
-    # Entrada
-    incomingMessage = request.form.get('Body').lower()
 
-    # Saída
-    # response = flow.processInput(incomingMessage)
-    response = 'Oi'
-
-    # Processamento de Envio de Mensagem
+    msg = request.form.get('Body')
     resp = MessagingResponse()
+    user="Yama"
 
-    if incomingMessage in ['oi']:
-        resp.message(f"{response}, Yama!")
-    # msg.body(response)
+
+    if msg.lower() in ["oie","oi", "ola", "alo", "alou", "eae", "salve"]:
+        resp.message(random.choice([f"Oi {user}!", "Oiee", f"Salve {user}!", f"Eae {user}, tudo bem?"]))
+
+    if msg.lower() in ["add", "adiciona"]:
+        resp.message("ADD")
+
 
     return str(resp)
+    # # Entrada
+    # incomingMessage = request.form.get('Body').lower()
+
+    # # Saída
+    # # response = flow.processInput(incomingMessage)
+    # response = 'Oi'
+
+    # # Processamento de Envio de Mensagem
+    # resp = MessagingResponse()
+
+    # if incomingMessage in ['oi']:
+    #     resp.message(f"{response}, Yama!")
+    # # msg.body(response)
+
+    # return str(resp)
 
 
 # Good Boy
