@@ -42,13 +42,13 @@ def sms_reply():
 
 
     # SAÍDA:
-    if hasMedia > 0:
-        response = f"{incomingMessage} \n\n{messageBody} \n\n{hasMedia} \n\n{contentTypeMedia} \n\n {urlMedia}"
+    # if hasMedia > 0:
+    response = f"{incomingMessage} \n\n{messageBody} \n\n{hasMedia} \n\n{contentTypeMedia} \n\n {urlMedia}"
         # response = "Thanks for the image. Here's one for you!"
 
-    else:
-        # response = flow.processInput(messageBody)
-        response = f"{incomingMessage} \n\n{messageBody} \n\n{hasMedia} \n\n{contentTypeMedia} \n\n {urlMedia}"
+    # else:
+    #     # response = flow.processInput(messageBody)
+    #     response = f"{incomingMessage} \n\n{messageBody} \n\n{hasMedia} \n\n{contentTypeMedia} \n\n {urlMedia}"
         
 
     # ENVIO DE MENSAGEM:
