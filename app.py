@@ -41,7 +41,7 @@ def sms_reply():
     urlMedia = incomingMessage.get('MediaUrl0')
 
     # Saída
-    if hasMedia:
+    if hasMedia == 1:
         response = f"{hasMedia} , {incomingMessage}"
 
     else:
