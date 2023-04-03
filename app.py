@@ -32,17 +32,19 @@ def sms_reply():
     incomingMessage = request.form
 
     # --> Mensagem:
-    messageBody = incomingMessage['Body']
+    messageBody = incomingMessage.get('Body')
 
     # --> Media:
-    hasMedia = 'MediaContentType0' in incomingMessage
-    urlMedia = incomingMessage['MediaUrl0']
+    hasMedia = incomingMessage.get('NumMedia')
+
+    contentTypeMedia = incomingMessage.get('MediaContentType0')
+    urlMedia = incomingMessage.get('MediaUrl0')
 
     # Saída
     if hasMedia:
         response = f"{hasMedia} , {incomingMessage}"
 
-    elif hasMedia != 'True':
+    else:
         # response = flow.processInput(messageBody)
         response = f"{hasMedia} , {messageBody}"
 
