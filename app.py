@@ -48,10 +48,7 @@ def sms_reply():
         # response = "Thanks for the image. Here's one for you!"
 
     # else:
-    # response = 'oi'
     response = flow.processInput(messageBody, hasMedia)
-        # response = 'Sem Imagem.'
-    #     response = f"{incomingMessage} \n\n{messageBody} \n\n{hasMedia} \n\n{contentTypeMedia} \n\n {urlMedia}"
         
 
     # ENVIO DE MENSAGEM:

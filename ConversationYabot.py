@@ -10,10 +10,10 @@ class ConversationFlow():
 
    def processInput(self, inputText, hasMedia):
       if hasMedia > 0:
-         return 'MEDIA'
+         return "Thanks for the image. Here's one for you!"
       
       else:
-         return f'SEM MEDIA\ninputText: {inputText}'
+         return f'inputText: {inputText}'
       # if self.state == 'start':
       #    self.state = 'echo'
       #    return inputText
