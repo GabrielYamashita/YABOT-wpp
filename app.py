@@ -35,7 +35,7 @@ def sms_reply():
     messageBody = incomingMessage.get('Body')
 
     # --> Media:
-    hasMedia = incomingMessage.get('NumMedia')
+    hasMedia = int(incomingMessage.get('NumMedia'))
 
     contentTypeMedia = incomingMessage.get('MediaContentType0')
     urlMedia = incomingMessage.get('MediaUrl0')
@@ -59,7 +59,7 @@ def sms_reply():
     msg = resp.message()
     msg.body(response)
 
-    if hasMedia == 1:
+    if hasMedia > 0:
         msg.media(GOOD_BOY_URL)
 
     return str(resp)
