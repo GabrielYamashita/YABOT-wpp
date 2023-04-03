@@ -22,9 +22,15 @@ flow = ConversationFlow()
 def sms_reply():
     # Entrada
     incomingMessage = request.form.get('Body').lower()
+    num_media = int(request.values.get("NumMedia"))
 
     # Saída
-    response = flow.processInput(incomingMessage)
+    if num_media == 1:
+        response = "Thanks for the image. Here's one for you!"
+        msg.media(GOOD_BOY_URL)
+
+    else:
+        response = flow.processInput(incomingMessage)
 
     # Processamento de Envio de Mensagem
     resp = MessagingResponse()
