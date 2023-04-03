@@ -11,6 +11,12 @@ from ConversationYabot import ConversationFlow
 app = Flask(__name__)
 # run_with_ngrok(app=app, auth_token='27sah00EdAmv9RxS5teUE849TnL_6TnpnpdEeozsPMpugjVvu')
 
+
+GOOD_BOY_URL = (
+    "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?ixlib=rb-1.2.1"
+    "&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+)
+
 # Home Page
 @app.route("/")
 def home():
@@ -29,11 +35,12 @@ def sms_reply():
 
     # --> Media:
     hasMedia = 'MediaContentType0' in incomingMessage
+    urlMedia = incomingMessage['MediaUrl0']
 
     # Saída
     if hasMedia:
-        response = incomingMessage['MediaUrl0']
-        # msg.media()
+        response = "Thanks for the image. Here's one for you!"
+        msg.media(GOOD_BOY_URL)
 
     else:
         response = flow.processInput(messageBody)
@@ -47,10 +54,10 @@ def sms_reply():
 
 
 # Good Boy
-GOOD_BOY_URL = (
-    "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?ixlib=rb-1.2.1"
-    "&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-)
+# GOOD_BOY_URL = (
+#     "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?ixlib=rb-1.2.1"
+#     "&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+# )
 
 @app.route("/goodboy", methods=["GET", "POST"])
 def reply_whatsapp():
