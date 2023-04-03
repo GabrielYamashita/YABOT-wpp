@@ -44,7 +44,7 @@ def sms_reply():
 
     else:
         # response = flow.processInput(messageBody)
-        response = f"{hasMedia}"
+        response = f"{hasMedia} , {messageBody}"
 
     # Processamento de Envio de Mensagem
     resp = MessagingResponse()
