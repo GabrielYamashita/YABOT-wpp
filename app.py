@@ -43,7 +43,7 @@ def sms_reply():
 
     # SAÍDA:
     # if hasMedia > 0:
-    response = f"{incomingMessage} \n\n{messageBody} \n\n{hasMedia} \n\n{contentTypeMedia} \n\n {urlMedia}"
+    response = f"incomingMessage:\n{incomingMessage} \n\nmessageBody:\n{messageBody} \n\nhasMedia:\n{hasMedia} \n\ncontentTypeMedia\n{contentTypeMedia} \n\nurlMedia\n{urlMedia}"
         # response = "Thanks for the image. Here's one for you!"
 
     # else:
