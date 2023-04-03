@@ -10,7 +10,7 @@ class ConversationFlow():
 
    def processInput(self, inputText, hasMedia):
       if hasMedia > 0:
-         return 
+         # return 
          return "Thanks for the image. Here's one for you!"
       
       else:
