@@ -48,12 +48,13 @@ def sms_reply():
 
     # SAÍDA:
     if hasMedia > 0:
-        response = "Thanks for the image. Here's one for you!"
-        msg.media(GOOD_BOY_URL)
+        response = f"{incomingMessage} \n\n{messageBody} \n\n{hasMedia} \n\n{contentTypeMedia} \n\n {urlMedia}"
+        # response = "Thanks for the image. Here's one for you!"
+        # msg.media(GOOD_BOY_URL)
 
     else:
         response = flow.processInput(messageBody)
-        # response = f"{incomingMessage} \n\n{messageBody} \n\n{hasMedia} \n\n{contentTypeMedia} \n\n {urlMedia}"
+        response = f"{incomingMessage} \n\n{messageBody} \n\n{hasMedia} \n\n{contentTypeMedia} \n\n {urlMedia}"
         
 
     # TEXTO PARA A MENSAGEM:
