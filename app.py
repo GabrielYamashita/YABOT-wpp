@@ -29,7 +29,7 @@ flow = ConversationFlow()
 @app.route("/yabot", methods=['GET', 'POST'])
 def sms_reply():
     # - Entrada
-    incomingMessage = request.values
+    incomingMessage = request.form
 
     # --> Mensagem:
     messageBody = incomingMessage['Body']
@@ -40,7 +40,7 @@ def sms_reply():
 
     # Saída
     if hasMedia:
-        response = f"{hasMedia} , {messageBody}"
+        response = f"{hasMedia} , {incomingMessage}"
 
     elif hasMedia != 'True':
         # response = flow.processInput(messageBody)
