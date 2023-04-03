@@ -42,11 +42,12 @@ def sms_reply():
 
     # Saída
     if hasMedia == 1:
-        response = f"{hasMedia} , {incomingMessage}"
+        response = f"{incomingMessage} \n\n{messageBody} \n\n{hasMedia} \n\n{contentTypeMedia} \n\n {urlMedia}"
 
     else:
         # response = flow.processInput(messageBody)
-        response = f"{hasMedia} , {messageBody}"
+        response = f"{incomingMessage} \n\n{messageBody} \n\n{hasMedia} \n\n{contentTypeMedia} \n\n {urlMedia}"
+        
 
     # Processamento de Envio de Mensagem
     resp = MessagingResponse()
