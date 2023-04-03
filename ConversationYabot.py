@@ -9,13 +9,14 @@ class ConversationFlow():
       self.data = {}
 
    def processInput(self, inputText):
-      if self.state == 'start':
-         self.state = 'echo'
-         return inputText
+      return f'inputText: {inputText}'
+      # if self.state == 'start':
+      #    self.state = 'echo'
+      #    return inputText
       
-      elif self.state == 'echo':
-         self.state = 'start'
-         return f'Echo Mode: {inputText}'
+      # elif self.state == 'echo':
+      #    self.state = 'start'
+      #    return f'Echo Mode: {inputText}'
       # if self.state == 'start':
       #    self.data = {}
       #    self.state = 'play?'
