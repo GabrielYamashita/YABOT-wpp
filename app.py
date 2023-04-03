@@ -28,7 +28,12 @@ flow = ConversationFlow()
 
 @app.route("/yabot", methods=['GET', 'POST'])
 def sms_reply():
-    # - Entrada
+    # ENVIO DE MENSAGEM:
+    resp = MessagingResponse()
+    msg = resp.message()
+
+
+    # ENTRADA:
     incomingMessage = request.form
 
     # --> Mensagem:
@@ -40,22 +45,19 @@ def sms_reply():
     contentTypeMedia = incomingMessage.get('MediaContentType0')
     urlMedia = incomingMessage.get('MediaUrl0')
 
-    # Saída
+
+    # SAÍDA:
     if hasMedia == 1:
-        response = f"{incomingMessage} \n\n{messageBody} \n\n{hasMedia} \n\n{contentTypeMedia} \n\n {urlMedia}"
+        response = "Thanks for the image. Here's one for you!"
+        msg.media(GOOD_BOY_URL)
 
     else:
-        # response = flow.processInput(messageBody)
-        response = f"{incomingMessage} \n\n{messageBody} \n\n{hasMedia} \n\n{contentTypeMedia} \n\n {urlMedia}"
+        response = flow.processInput(messageBody)
+        # response = f"{incomingMessage} \n\n{messageBody} \n\n{hasMedia} \n\n{contentTypeMedia} \n\n {urlMedia}"
         
 
-    # Processamento de Envio de Mensagem
-    resp = MessagingResponse()
-    msg = resp.message()
+    # TEXTO PARA A MENSAGEM:
     msg.body(response)
-
-    if hasMedia:
-        msg.media(GOOD_BOY_URL)
 
     return str(resp)
 
