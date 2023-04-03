@@ -47,7 +47,7 @@ def sms_reply():
 
 
     # SAÍDA:
-    if hasMedia == 1:
+    if hasMedia > 0:
         response = "Thanks for the image. Here's one for you!"
         msg.media(GOOD_BOY_URL)
 
