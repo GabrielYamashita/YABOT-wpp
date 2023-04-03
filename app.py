@@ -1,4 +1,5 @@
 
+from email import message
 from flask import Flask, request
 # from flask_ngrok2 import run_with_ngrok
 from twilio.twiml.messaging_response import MessagingResponse
@@ -20,17 +21,22 @@ def home():
 flow = ConversationFlow()
 @app.route("/yabot", methods=['GET', 'POST'])
 def sms_reply():
-    # Entrada
-    incomingMessage = request.form.get('Body').lower()
-    num_media = int(request.values.get("NumMedia"))
+    # - Entrada
+    incomingMessage = request.values
+
+    # --> Mensagem:
+    messageBody = incomingMessage['Body']
+
+    # --> Media:
+    hasMedia = 'MediaContentType0' in incomingMessage
 
     # Saída
-    if num_media == 1:
-        response = "Thanks for the image. Here's one for you!"
-        msg.media(GOOD_BOY_URL)
+    if hasMedia:
+        response = incomingMessage['MediaUrl0']
+        # msg.media()
 
     else:
-        response = flow.processInput(incomingMessage)
+        response = flow.processInput(messageBody)
 
     # Processamento de Envio de Mensagem
     resp = MessagingResponse()
