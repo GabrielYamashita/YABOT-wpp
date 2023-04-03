@@ -37,8 +37,8 @@ def sms_reply():
     # --> Media:
     hasMedia = incomingMessage.get('NumMedia')
 
-    contentTypeMedia = incomingMessage.get('MediaContentType0')
-    urlMedia = incomingMessage.get('MediaUrl0')
+    # contentTypeMedia = incomingMessage.get('MediaContentType0')
+    # urlMedia = incomingMessage.get('MediaUrl0')
 
 
     # SAÍDA:
