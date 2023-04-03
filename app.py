@@ -37,8 +37,8 @@ def sms_reply():
     # --> Media:
     hasMedia = incomingMessage.get('NumMedia')
 
-    # contentTypeMedia = incomingMessage.get('MediaContentType0')
-    # urlMedia = incomingMessage.get('MediaUrl0')
+    contentTypeMedia = incomingMessage.get('MediaContentType0')
+    urlMedia = incomingMessage.get('MediaUrl0')
 
 
     # SAÍDA:
@@ -48,7 +48,7 @@ def sms_reply():
         # response = "Thanks for the image. Here's one for you!"
 
     # else:
-    response = flow.processInput(messageBody)
+    response = flow.processInput(messageBody, hasMedia)
         # response = 'Sem Imagem.'
     #     response = f"{incomingMessage} \n\n{messageBody} \n\n{hasMedia} \n\n{contentTypeMedia} \n\n {urlMedia}"
         
