@@ -9,7 +9,7 @@ class ConversationFlow():
       self.data = {}
 
    def processInput(self, inputText, hasMedia):
-      if hasMedia > 0:
+      if hasMedia == 1:
          return 'MEDIA'
       
       else:
