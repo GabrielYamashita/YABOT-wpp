@@ -40,7 +40,7 @@ def sms_reply():
     # Saída
     if hasMedia:
         response = "Thanks for the image. Here's one for you!"
-        msg.media(GOOD_BOY_URL)
+        # msg.media(GOOD_BOY_URL)
 
     else:
         response = flow.processInput(messageBody)
@@ -49,6 +49,9 @@ def sms_reply():
     resp = MessagingResponse()
     msg = resp.message()
     msg.body(response)
+
+    if hasMedia:
+        msg.media(GOOD_BOY_URL)
 
     return str(resp)
 
