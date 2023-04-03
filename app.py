@@ -25,6 +25,7 @@ def home():
 
 # Yabot Wpp
 flow = ConversationFlow()
+
 @app.route("/yabot", methods=['GET', 'POST'])
 def sms_reply():
     # - Entrada
@@ -39,8 +40,7 @@ def sms_reply():
 
     # Saída
     if hasMedia:
-        response = "Thanks for the image. Here's one for you!"
-        # msg.media(GOOD_BOY_URL)
+        response = f"{hasMedia}"
 
     else:
         response = flow.processInput(messageBody)
@@ -83,4 +83,4 @@ def reply_whatsapp():
 
 # Loop Principal
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()

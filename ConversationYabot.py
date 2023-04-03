@@ -1,7 +1,7 @@
 
-import random
+# import random
 
-opcoes = ['pedra', 'papel', 'tesoura']
+# opcoes = ['pedra', 'papel', 'tesoura']
 
 class ConversationFlow():
    def __init__(self):
