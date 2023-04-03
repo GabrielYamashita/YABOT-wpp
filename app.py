@@ -40,7 +40,7 @@ def sms_reply():
 
     # Saída
     if hasMedia:
-        response = f"{hasMedia} , {incomingMessage}"
+        response = f"{hasMedia} , {messageBody}"
 
     elif hasMedia != 'True':
         # response = flow.processInput(messageBody)
