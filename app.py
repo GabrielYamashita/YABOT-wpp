@@ -42,7 +42,7 @@ def sms_reply():
     if hasMedia:
         response = f"{hasMedia}"
 
-    else:
+    elif hasMedia != 'True':
         # response = flow.processInput(messageBody)
         response = f"{hasMedia} , {messageBody}"
 
