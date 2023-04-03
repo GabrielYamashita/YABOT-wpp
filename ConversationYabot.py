@@ -8,8 +8,12 @@ class ConversationFlow():
       self.state = 'start'
       self.data = {}
 
-   def processInput(self, inputText):
-      return f'inputText: {inputText}'
+   def processInput(self, inputText, hasMedia):
+      if hasMedia > 0:
+         return 'MEDIA'
+      
+      else:
+         return f'SEM MEDIA\ninputText: {inputText}'
       # if self.state == 'start':
       #    self.state = 'echo'
       #    return inputText
