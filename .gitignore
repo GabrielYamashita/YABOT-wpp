@@ -1,6 +1,6 @@
 myvenv/
 *.pyc
 *.env
-*.md
 
-/new.py
+/infos.md
+/infos.py
