@@ -1,78 +1,47 @@
 
-# import random
+import random
 
 # opcoes = ['pedra', 'papel', 'tesoura']
 
 class ConversationFlow():
    def __init__(self):
-      self.state = 'start'
+      self.state = 'menu'
       self.data = {}
 
    def processInput(self, inputText, hasMedia):
       if hasMedia > 0:
-         # return 
+         return 
          return "Thanks for the image. Here's one for you!"
       
       else:
-         return f'inputText: {inputText}'
-      # if self.state == 'start':
-      #    self.state = 'echo'
-      #    return inputText
-      
-      # elif self.state == 'echo':
-      #    self.state = 'start'
-      #    return f'Echo Mode: {inputText}'
-      # if self.state == 'start':
-      #    self.data = {}
-      #    self.state = 'play?'
-      #    return "Olá, gostaria de Jogar Jokenpô?"
-      
-      # elif self.state == 'play?':
-      #    if inputText in ['sim', 's']:
-      #       self.state = 'jokenpo'
-      #       return "Mande sua escolha!"
+         xingamentos = [
+            'Vai se ferrar Yama!', 
+            'Cala boca vagabundo!', 
+            'Se fuder.',
+            'oi o krl, se fuder.',
+            'sua vagabunda.'
+         ]
 
-      #    elif inputText in ['não', 'nao', 'n']:
-      #       self.state = 'start'
-      #       return 'Ok até mais tarde!'
+         return random.choice(xingamentos)
 
-      #    else:
-      #       self.state = 'play?'
-      #       return 'Não entendi, repete por favor?'
          
-      # elif self.state == 'jokenpo':
-      #    pc = random.choice(opcoes)
-      #    self.data['pc'] = pc
+#             return f'''
+# *MENU:*
+# - TASK 1:
+# --- SUBTASK 1.1
+# --- SUBTASK 1.2
 
-      #    self.data['me'] = inputText
+# - TASK 2:
+# --- SUBTASK 2.1
+# --- SUBTASK 2.2
 
-      #    escolhas = f'PC: {self.data["pc"]}\nVocê: {self.data["me"]}'
-      #    if self.data['pc'] == self.data['me']:
-      #       return f'{escolhas}\nEmpatou'
-         
-      #    elif self.data['pc'] == 'pedra':
-      #       if self.data['me'] == 'papel':
-      #          return f'{escolhas}\nVocê Ganhou!'
-            
-      #       elif self.data['me'] == 'tesoura':
-      #          return f'{escolhas}\nVocê Perdeu!'
-            
-      #    elif self.data['pc'] == 'tesoura':            
-      #       if self.data['me'] == 'pedra':
-      #          return f'{escolhas}\nVocê Ganhou!'
-            
-      #       elif self.data['me'] == 'papel':
-      #          return f'{escolhas}\nVocê Perdeu!'
-            
-      #    elif self.data['pc'] == 'papel':
-      #       if self.data['me'] == 'tesoura':
-      #          return f'{escolhas}\nVocê Ganhou!'
-
-      #       elif self.data['me'] == 'pedra':
-      #          return f'{escolhas}\nVocê Perdeu!'
-         
-      #    self.state = 'start'
-         
+# - TASK 3:
+# --- SUBTASK 3.1
+# --- SUBTASK 3.2
+# --- SUBTASK 3.3
+# --- --- SUBSUBTASK 3.3.1
+# --- --- SUBSUBTASK 3.3.2
+# '''
 
 
 
